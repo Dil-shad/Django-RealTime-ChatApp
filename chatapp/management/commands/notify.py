@@ -10,7 +10,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         channel_layer = get_channel_layer()
-        print("hello")
+        print("base command")
         async_to_sync(channel_layer.group_send)("chat_ROOM1", {
                     'type': 'chat_message',
                     'message': "management-notification",
